@@ -40,6 +40,35 @@ namespace SortingAlgorithms
 
             return input;
         }
+
+
+        // **BUBBLE SORT**
+        public static List<int> BubbleSort(List<int> input)
+        {
+            List<int> result = new List<int>(input);
+            int totalSwaps = 0;
+            int tempNumb = 0;
+            for(int i = 0; i < result.Count; i++)
+            {
+                totalSwaps = 0;
+
+                for(int i2 = 0; i2 < input.Count - 1; i2++)
+                {
+                    if(result[i2] > result[i2 + 1])
+                    {
+                        tempNumb = result[i2];
+                        result[i2] = result[i2 + 1];
+                        result[i2 + 1] = tempNumb;
+                        totalSwaps++;
+                    }
+                }
+
+                if (totalSwaps == 0)
+                    break;
+            }
+
+            return result;
+        }
     }
         
 }
